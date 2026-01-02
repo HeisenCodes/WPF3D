@@ -5,22 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF3D"
         xmlns:helix="http://helix-toolkit.org/wpf"
-        xmlns:h="http://helixToolkit.org/wpf"
         xmlns:v="clr-namespace:WPF3D.Views"
         xmlns:vm="clr-namespace:WPF3D.ViewModels"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" d:DataContext="{d:DesignInstance Type=vm:MainWindowViewModel}">
+
+
     <Grid>
-        <helix:HelixViewport3D
-            ShowFrameRate="True"
-            ZoomExtentsWhenLoaded="True">
+        <helix:HelixViewport3D x:Name="viewPort" ZoomExtentsWhenLoaded="True">
 
-            <!-- Lighting -->
-            <helix:SunLight/>
-
-            <!-- Load OBJ model -->
-            <helix:Teapot/>
-
+            <helix:DefaultLights/>
+            <ModelVisual3D Content="{Binding Model}"/>
 
         </helix:HelixViewport3D>
     </Grid>

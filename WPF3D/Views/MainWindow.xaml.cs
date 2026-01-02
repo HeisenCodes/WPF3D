@@ -5,10 +5,16 @@ namespace WPF3D.Views
 {
     public partial class MainWindow : Window
     {
+        MainWindowViewModel ViewModel;
+
         public MainWindow(MainWindowViewModel viewModel)
         {
             InitializeComponent();
-            this.DataContext = viewModel;
+            this.DataContext = this.ViewModel = viewModel;
+
+
         }
+
+
     }
 }
